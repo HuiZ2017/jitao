@@ -5,7 +5,7 @@
  @author: ZhangHui
  @contact: hui013@live.com
  @file: WebControl.py
- @time: 2018/6/10 18:58
+ @time: 2018/8/14 18:58
  """
 
 import requests
@@ -21,12 +21,12 @@ class WebControl():
         self.passwd = passwd
         self.headers = getUserAgent()
         self.MainSession = requests.Session()
-        self.URL = {'login':"http://bm.jishutao.com/managesignin" ,
-                    'csearch':"http://bm.jishutao.com/api/admin/customer/listAllOrganizationCustomer",
-                    'addC':'http://bm.jishutao.com/api/admin/customer/addCustomer',
-                    'listAllPriCu':'http://bm.jishutao.com/api/admin/customer/listPrivateOrganizationCustomer',
-                    'addF':'http://bm.jishutao.com/api/admin/customer/addFollow',
-                    'findOCBid':'http://bm.jishutao.com/api/admin/customer/findCustomerContacts?uid={}'}
+        self.URL = {'login':"http://bm.kedexinxi.com/managesignin" ,
+                    'csearch':"http://bm.kedexinxi.com/api/admin/customer/listAllOrganizationCustomer",
+                    'addC':'http://bm.kedexinxi.com/api/admin/customer/addCustomer',
+                    'listAllPriCu':'http://bm.kedexinxi.com/api/admin/customer/listPrivateOrganizationCustomer',
+                    'addF':'http://bm.kedexinxi.com/api/admin/customer/addFollow',
+                    'findOCBid':'http://bm.kedexinxi.com/api/admin/customer/findCustomerContacts?uid={}'}
         self.login()
         self.fileObj = None
     def login(self):
@@ -177,19 +177,3 @@ class WebControl():
                 return result['data'][0]['id']
             else:
                 return False
-        #time.strftime("%Y-%m-%d", time.localtime())
-#headers = getUserAgent()
-#MainSession = requests.Session()
-#loginPage = MainSession.post(url=LoginURL,data=LoginParams)
-#print(loginPage.cookies)
-
-#OneSearch = MainSession.post(url=listCustomer,
-#                             data=CustomerParams)
-# #print(OneSearch.text)
-#
-# if __name__ == "__main__":
-#     demo = WebControl(username='17673102113',passwd='123456')
-#     print(demo.getUserInfo())
-#     for i in demo.oneSearch('湖南长沙'):
-#         print(i)
-
